@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Clean Auto (MCA) | Detailing & Lavage Mobile à Conakry</title>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           MOBILE CLEAN AUTO (MCA) - DESIGN SYSTEM
+           ========================================== */
+
+        :root {
+            --primary-blue: #0284c7;
+            --dark-blue: #0f172a;
+            --accent-gold: #f59e0b;
+            --accent-gold-hover: #d97706;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #1eb954;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .header {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            padding: 1rem 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary-blue);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            color: #cbd5e1;
+        }
+
+        .nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-header {
+            background-color: var(--accent-gold);
+            color: var(--dark-blue);
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-header:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(2, 132, 199, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--text-light);
+            padding: 7rem 5% 5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .badge {
+            background-color: rgba(245, 158, 11, 0.2);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero .slogan {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-main:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--dark-blue);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS --- */
+        .section {
+            padding: 5rem 7%;
+        }
+
+        .bg-light {
+            background-color: #f1f5f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* --- ABOUT & CONCEPTS --- */
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #334155;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2.2rem 1.8rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent-gold);
+        }
+
+        .icon-box {
+            width: 65px;
+            height: 65px;
+            background-color: rgba(2, 132, 199, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.2rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .icon-box {
+            background-color: var(--accent-gold);
+            color: var(--dark-blue);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- TARIFS & CALCULATEUR --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .price-card.popular {
+            border: 2px solid var(--accent-gold);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-gold);
+            color: var(--dark-blue);
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .price-card h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+        }
+
+        .price-card .models {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            min-height: 38px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .price-row.total {
+            border-bottom: none;
+            font-weight: 800;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* SIMULATEUR DE DEVIS */
+        .calculator-box {
+            background: var(--dark-blue);
+            color: var(--text-light);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calculator-box h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .calc-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .form-group select, .form-group input {
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background-color: #1e293b;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .calc-result {
+            grid-column: span 2;
+            background-color: rgba(2, 132, 199, 0.2);
+            border: 1px solid var(--primary-blue);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calc-result span.amount {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+        }
+
+        /* --- B2B & FLOTTES --- */
+        .b2b-banner {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #0369a1 100%);
+            color: var(--text-light);
+            border-radius: var(--radius-lg);
+            padding: 4rem 8%;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .b2b-content h2 {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .b2b-content p {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-bottom: 2.5rem;
+        }
+
+        .b2b-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 1.2rem;
+            border-radius: var(--radius-md);
+        }
+
+        .b2b-item i {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .b2b-item h4 {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        /* --- ÉQUIPEMENT DE POINTE & DOSSIER --- */
+        .table-responsive {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: var(--bg-light);
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+
+        .badge-acquis {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            padding: 4rem 7% 1.5rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand span {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact h4 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-contact ul li {
+            color: #cbd5e1;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact ul li i {
+            color: var(--accent-gold);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1rem 5%;
+            }
+            .nav ul {
+                gap: 12px;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .slogan {
+                font-size: 1.1rem;
+            }
+            .calc-form {
+                grid-template-columns: 1fr;
+            }
+            .calc-result {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-car-wash"></i> MOBILE <span>CLEAN AUTO</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">Vision</a></li>
+                <li><a href="#tarifs">Tarifs & Devis</a></li>
+                <li><a href="#flottes">Flottes B2B</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/224627913601?text=Bonjour%20MCA,%20je%20souhaite%20réserver%20un%20lavage%20mobile." class="btn-header" target="_blank">
+            <i class="fab fa-whatsapp"></i> Réserver +224 627 913 601
+        </a>
+    </header>
+
+    <!-- BANNIÈRE PRINCIPALE (HERO) -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Le 1er Service Mobile de Detailing Pro à Conakry</span>
+            <h1>MOBILE <span>CLEAN AUTO (MCA)</span></h1>
+            <p class="slogan">« Lavage Automobile Professionnel à Domicile et en Entreprise. »</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/224627913601?text=Bonjour%20MCA,%20je%20souhaite%20réserver%20un%20service%20de%20lavage%20à%20domicile." class="btn-main" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                </a>
+                <a href="#calculator" class="btn-secondary">Calculer mon devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SYNTHÈSE & STRATÉGIE -->
+    <section id="about" class="section">
+        <div class="section-title">
+            <h2>Présentation & Concept Innovant</h2>
+            <p>Une unité d'intervention autonome qui se déplace jusqu'à vous à Conakry</p>
+        </div>
+        <div class="about-container">
+            <p class="about-text">
+                <strong>MOBILE CLEAN AUTO (MCA)</strong> offre une prestation de detailing et de lavage automobile mobile qui supprime totalement les contraintes de déplacement et les files d'attente. Grâce à un matériel professionnel haute performance et du personnel qualifié, nous venons à vous chez vous ou sur votre lieu de travail.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-truck-fast"></i></div>
+                    <h3>Unité Autonome</h3>
+                    <p>Déplacement sur site avec tout le matériel requis (Nettoyeur HP INGCO, tuyaux, aspirateur et consommables).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-gem"></i></div>
+                    <h3>Qualité Pro & Certifiée</h3>
+                    <p>Produits de finition haut de gamme : shampoing neutre, rénovateurs UV, brosses spécialisées jantes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                    <h3>Cible Particuliers & B2B</h3>
+                    <p>Service adapté aux véhicules personnels ainsi qu'aux contrats d'entretien de parcs automobiles d'entreprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRILLE TARIFAIRE -->
+    <section id="tarifs" class="section bg-light">
+        <div class="section-title">
+            <h2>Grille Tarifaire (Marché Guinéen)</h2>
+            <p>Déplacement sur site inclus dans toute la zone de Conakry</p>
+        </div>
+        <div class="pricing-grid">
+            
+            <!-- Card Motos -->
+            <div class="price-card">
+                <div class="card-icon"><i class="fas fa-motorcycle"></i></div>
+                <h3>Motos & Scooters</h3>
+                <p class="models">TVS, Kasea, Yamaha, Scooters...</p>
+                <div class="price-row"><span>Lavage Externe</span> <strong>20 000 GNF</strong></div>
+                <div class="price-row"><span>Lavage Complet</span> <strong>35 000 GNF</strong></div>
+                <div class="price-row total"><span>Formule VIP</span> <strong>50 000 GNF</strong></div>
+            </div>
+
+            <!-- Card Berlines -->
+            <div class="price-card popular">
+                <span class="popular-badge">Très Demandé</span>
+                <div class="card-icon"><i class="fas fa-car"></i></div>
+                <h3>Citadines & Berlines</h3>
+                <p class="models">Toyota Corolla, Mercedes Classe C...</p>
+                <div class="price-row"><span>Lavage Externe</span> <strong>50 000 GNF</strong></div>
+                <div class="price-row"><span>Lavage Complet</span> <strong>80 000 GNF</strong></div>
+                <div class="price-row total"><span>Formule VIP</span> <strong>100 000 GNF</strong></div>
+            </div>
+
+            <!-- Card SUV -->
+            <div class="price-card">
+                <div class="card-icon"><i class="fas fa-car-side"></i></div>
+                <h3>SUV & Crossovers</h3>
+                <p class="models">Hyundai Tucson, RAV4, Duster...</p>
+                <div class="price-row"><span>Lavage Externe</span> <strong>70 000 GNF</strong></div>
+                <div class="price-row"><span>Lavage Complet</span> <strong>90 000 GNF</strong></div>
+                <div class="price-row total"><span>Formule VIP</span> <strong>120 000 GNF</strong></div>
+            </div>
+
+            <!-- Card 4x4 -->
+            <div class="price-card">
+                <div class="card-icon"><i class="fas fa-truck-pickup"></i></div>
+                <h3>4x4 & Pickups</h3>
+                <p class="models">Land Cruiser Prado, Hilux...</p>
+                <div class="price-row"><span>Lavage Externe</span> <strong>80 000 GNF</strong></div>
+                <div class="price-row"><span>Lavage Complet</span> <strong>100 000 GNF</strong></div>
+                <div class="price-row total"><span>Formule VIP</span> <strong>140 000 GNF</strong></div>
+            </div>
+
+        </div>
+
+        <!-- SIMULATEUR DE DEVIS DYNAMIQUE -->
+        <div id="calculator" class="calculator-box">
+            <h3><i class="fas fa-calculator"></i> Estimateur Rapide de Devis</h3>
+            <div class="calc-form">
+                <div class="form-group">
+                    <label for="vehicleType">Type de Véhicule</label>
+                    <select id="vehicleType" onchange="calculatePrice()">
+                        <option value="moto">Moto / Scooter</option>
+                        <option value="berline" selected>Citadine / Berline</option>
+                        <option value="suv">SUV / Crossover</option>
+                        <option value="4x4">4x4 / Pickup</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="serviceType">Formule Souhaitée</label>
+                    <select id="serviceType" onchange="calculatePrice()">
+                        <option value="externe">Lavage Externe Simple</option>
+                        <option value="complet" selected>Lavage Complet (Int / Ext)</option>
+                        <option value="vip">Formule VIP Detailing</option>
+                    </select>
+                </div>
+                <div class="calc-result">
+                    <p>Tarif Estimé pour votre Intervention :</p>
+                    <span class="amount" id="totalPrice">80 000 GNF</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <button onclick="sendWhatsAppOrder()" class="btn-main" style="margin: 0 auto; border:none; cursor:pointer;">
+                    <i class="fab fa-whatsapp"></i> Réserver cette formule
+                </button>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- SECTION ENTREPRISES & FLOTTES -->
+    <section id="flottes" class="section bg-light">
+        <div class="b2b-banner">
+            <div class="b2b-content">
+                <h2><i class="fas fa-building"></i> Stratégie Flottes Entreprises & PME</h2>
+                <p>
+                    Banques, PME, ONG, Sociétés de BTP à Conakry : Optimisez le temps de vos collaborateurs ! Nos équipes interviennent le week-end ou pendant vos heures creuses directement sur le parking de votre entreprise.
+                </p>
+                <div class="b2b-grid">
+                    <div class="b2b-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>Abonnement Mensuel</h4>
+                        <p style="font-size: 0.85rem; color: #e2e8f0;">Contrats sur mesure avec tarifs dégressifs avantageux.</p>
+                    </div>
+                    <div class="b2b-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Productivité Accrue</h4>
+                        <p style="font-size: 0.85rem; color: #e2e8f0;">Zéro temps perdu en station de lavage pour vos chauffeurs.</p>
+                    </div>
+                    <div class="b2b-item">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h4>Facturation Normalisée</h4>
+                        <p style="font-size: 0.85rem; color: #e2e8f0;">Devis professionnels, factures officielles & rapports d'entretien.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/224627913601?text=Bonjour%20MCA,%20je%20souhaite%20un%20devis%20de%20lavage%20pour%20notre%20flotte%20d'entreprise." class="btn-main" style="margin: 0 auto; display: inline-flex;" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Demander un Devis Flotte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>MOBILE <span>CLEAN AUTO (MCA)</span></h3>
+                <p>Investissez dans le premier service de detailing mobile professionnel et autonome à Conakry.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Information & Prise de Rendez-vous</h4>
+                <ul>
+                    <li><i class="fas fa-user-tie"></i> <strong>Promoteur :</strong> Moïse KOLIE</li>
+                    <li><i class="fas fa-phone-alt"></i> <strong>Téléphone :</strong> +224 627 913 601</li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email :</strong> koliemoise1@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>Localisation :</strong> Conakry, Guinée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mobile Clean Auto (MCA). Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE JAVASCRIPT SIMULATEUR & WHATSAPP -->
+    <script>
+        const priceMatrix = {
+            moto: { externe: 20000, complet: 35000, vip: 50000 },
+            berline: { externe: 50000, complet: 80000, vip: 100000 },
+            suv: { externe: 70000, complet: 90000, vip: 120000 },
+            '4x4': { externe: 80000, complet: 100000, vip: 140000 }
+        };
+
+        const vehicleLabels = {
+            moto: 'Moto / Scooter',
+            berline: 'Citadine / Berline',
+            suv: 'SUV / Crossover',
+            '4x4': '4x4 / Pickup'
+        };
+
+        const serviceLabels = {
+            externe: 'Lavage Externe Simple',
+            complet: 'Lavage Complet (Int/Ext)',
+            vip: 'Formule VIP Detailing'
+        };
+
+        function calculatePrice() {
+            const vehicle = document.getElementById('vehicleType').value;
+            const service = document.getElementById('serviceType').value;
+            const price = priceMatrix[vehicle][service];
+            document.getElementById('totalPrice').innerText = price.toLocaleString('fr-FR') + ' GNF';
+        }
+
+        function sendWhatsAppOrder() {
+            const vehicle = document.getElementById('vehicleType').value;
+            const service = document.getElementById('serviceType').value;
+            const price = priceMatrix[vehicle][service].toLocaleString('fr-FR') + ' GNF';
+
+            const message = `Bonjour MCA ! Je souhaite commander la prestation suivante :\n- Véhicule : ${vehicleLabels[vehicle]}\n- Formule : ${serviceLabels[service]}\n- Tarif Estimé : ${price}\nMerci de me recontacter pour confirmer la date et le lieu d'intervention !`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/224627913601?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
